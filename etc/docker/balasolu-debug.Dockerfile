@@ -5,6 +5,7 @@ RUN --mount=type=cache,target=/var/cache/apt apt update && apt install curl -y \
   && apt install nodejs -y && rm -rf /var/lib/apt/lists/*
 WORKDIR /
 
+
 # builder for nextjs project
 FROM base AS builder
 COPY ./src/balasolu ./src/balasolu
@@ -13,7 +14,7 @@ RUN npm i
 RUN npm run build --prod
 
 
-# production for express
+# production for nextjs project
 FROM base as production
 COPY ./src/balasolu ./src/balasolu
 COPY --from=builder ./src/balasolu/.next ./src/balasolu/.next
