@@ -1,5 +1,4 @@
 import React, { Component, FormEvent, useState } from 'react';
-import Bars3Icon from '@heroicons/react/24/outline/Bars3Icon';
 
 interface IProps {
 
@@ -11,18 +10,19 @@ interface IState {
     message: string
 }
 
-export default class Service extends Component<IProps, IState> {
+export default class EmailForm extends Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         this.state = {
-            name: "",
-            email: "",
-            message: ""
+            name: '',
+            email: '',
+            message: ''
         }
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick() {
-        console.log("hi");
+        console.log('handling button click');
         const data = {
             name: this.state.name,
             email: this.state.email,
@@ -49,20 +49,20 @@ export default class Service extends Component<IProps, IState> {
                         <div className="flex justify-center items-center m-1 p-1">
                             <div className="m-1 p-1">
                                 <div className="m-1 p-1 font-medium text-emerald-500 dark:text-emerald-400">what is your name?</div>
-                                <input id="name" type="text" value={this.state.name} onChange={e => this.setState({ name: e.target.value })} />
+                                <input id="name" type="text" value={this.state.name} onChange={(e) => this.setState({ name: e.target.value })} />
                             </div>
                             <div className="m-1 p-1">
                                 <div className="m-1 p-1 font-medium text-emerald-500 dark:text-emerald-400">what is your email?</div>
-                                <input id="email" type="email" value={this.state.email} onChange={e => this.setState({ email: e.target.value })} />
+                                <input id="email" type="email" value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} />
                             </div>
                         </div>
                         <div className="justify-center items-center m-1 p-1">
                             <div className="m-1 p-1 font-medium text-emerald-500 dark:text-emerald-400">how may we assist you?</div>
-                            <textarea className="w-full" id="message" rows={4} value={this.state.message} onChange={e => this.setState({ message: e.target.value })} />
+                            <textarea className="w-full" id="message" rows={4} value={this.state.message} onChange={(e) => this.setState({ message: e.target.value })} />
                         </div>
                     </div>
                     <div>
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={this.handleClick.bind(this)}>send message</button>
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => this.handleClick()}>send message</button>
                     </div>
                 </div>
         );
