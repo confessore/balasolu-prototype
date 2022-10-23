@@ -7,9 +7,15 @@ services:
             context: .
             dockerfile: etc/docker/balasolu-debug.Dockerfile
             target: runner
+        secrets:
+            - sendgrid-key
+        environment:
+            - APPLICATION__SENDGRIDOPTIONS__KEY=/run/secrets/sendgrid-key
         restart: always
 
     nginx:
+        depends_on:
+            - balasolu
         build:
             context: .
             dockerfile: etc/docker/nginx-debug.Dockerfile
@@ -17,3 +23,8 @@ services:
             - 80:80
             - 443:443
         restart: always
+
+secrets:
+
+    sendgrid-key:
+        file: secrets/sendgrid-key
