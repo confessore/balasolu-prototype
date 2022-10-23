@@ -6,9 +6,7 @@ services:
         build:
             context: .
             dockerfile: etc/docker/balasolu-debug.Dockerfile
-            target: production
-        ports:
-            - 3000:3000
+            target: runner
         restart: always
 
     nginx:
