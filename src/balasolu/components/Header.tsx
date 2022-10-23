@@ -34,7 +34,7 @@ export default class Header extends Component<IProps, IState> {
                     </div>
                     <div className="text-3xl font-extrabold">
                         <div className=" text-sky-500 dark:text-sky-400">
-                            we're glad you're here
+                            we&apos;re glad you&apos;re here
                         </div>
                         <div className="text-zinc-700 dark:text-zinc-500">
                             🎃
