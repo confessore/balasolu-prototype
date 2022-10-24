@@ -1,4 +1,5 @@
 import React, { Component, FormEvent, useState } from 'react';
+import sendgrid from '../libs/sendgrid';
 
 interface IProps {
 
@@ -23,6 +24,7 @@ export default class EmailForm extends Component<IProps, IState> {
 
     handleClick() {
         console.log('handling button click');
+        sendgrid;
         const data = {
             name: this.state.name,
             email: this.state.email,

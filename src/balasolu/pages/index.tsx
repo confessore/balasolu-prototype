@@ -16,6 +16,7 @@ import GlobeAmericasIcon from '@heroicons/react/24/outline/GlobeAmericasIcon';
 import CodeBracketIcon from '@heroicons/react/24/outline/CodeBracketIcon';
 import CakeIcon from '@heroicons/react/24/outline/CakeIcon';
 import CloudIcon from '@heroicons/react/24/outline/CloudIcon';
+import { isPropertySignature } from 'typescript';
 
 const Home: NextPage = () => {
   return (
