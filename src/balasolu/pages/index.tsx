@@ -16,6 +16,8 @@ import GlobeAmericasIcon from '@heroicons/react/24/outline/GlobeAmericasIcon';
 import CodeBracketIcon from '@heroicons/react/24/outline/CodeBracketIcon';
 import CakeIcon from '@heroicons/react/24/outline/CakeIcon';
 import CloudIcon from '@heroicons/react/24/outline/CloudIcon';
+import { isPropertySignature } from 'typescript';
+import axios from 'axios';
 
 const Home: NextPage = () => {
   return (
@@ -45,3 +47,17 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  //Create fetch's options
+
+ //Fetch data from the API
+ const res = await fetch('http://localhost:3000/api/hello');
+ const data = await res.json();
+ console.log(data);
+
+  // Pass data to the page via props
+  return { props: { data } }
+}
