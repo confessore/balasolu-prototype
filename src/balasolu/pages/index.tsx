@@ -7,6 +7,7 @@ import Contact from '../components/Contact';
 import EmailForm from '../components/EmailForm';
 import Echo from '../components/Echo';
 import Footer from '../components/Footer';
+import FTest from '../components/FTest';
 import Header from '../components/Header';
 import TopBar from '../components/TopBar';
 import Services from '../components/Services';
@@ -34,6 +35,7 @@ const Home: NextPage = () => {
             <Service icon={<CloudIcon />} title="we're your partner in the clouds" highlight="swift and responsive service availability anywhere your people are" description="redundancy and international stability is ensured with multi-regional replication" />
             <Service icon={<CakeIcon />} title="the cake is not a lie" highlight="scout's honor 🙋‍♂️" description="we throw mad cake parties" />
           </div>
+          <FTest />
           <EmailForm />
           <Footer />
         </div>
