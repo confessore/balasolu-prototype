@@ -19,7 +19,7 @@ import CloudIcon from '@heroicons/react/24/outline/CloudIcon';
 import { isPropertySignature } from 'typescript';
 import axios from 'axios';
 
-const Home: NextPage = (data: any) => {
+const Home: NextPage = () => {
   return (
     <div>
       <Head>
@@ -53,7 +53,11 @@ export async function getServerSideProps() {
   // Fetch data from external API
   //Create fetch's options
 
-  const data = 'data';
+ //Fetch data from the API
+ const res = await fetch('http://localhost:3000/api/hello');
+ const data = await res.json();
+ console.log(data);
+
   // Pass data to the page via props
   return { props: { data } }
 }
