@@ -10,8 +10,7 @@ then
         --register-unsafely-without-email \
         --agree-tos \
         -d balasolu.com \
-        -d www.balasolu.com \
-        -d api.balasolu.com
+        -d www.balasolu.com
     echo "SSL Certificate Generated!"
     echo "Copying SSL Config..."
     cp /nginx-release.conf /etc/nginx/nginx.conf
