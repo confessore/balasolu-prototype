@@ -4,7 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import About from '../components/About';
 import Contact from '../components/Contact';
-import EmailForm from '../components/EmailForm';
+import Emailer from '../components/Emailer';
 import Echo from '../components/Echo';
 import Footer from '../components/Footer';
 import FTest from '../components/FTest';
@@ -18,6 +18,7 @@ import CakeIcon from '@heroicons/react/24/outline/CakeIcon';
 import CloudIcon from '@heroicons/react/24/outline/CloudIcon';
 import { isPropertySignature } from 'typescript';
 import axios from 'axios';
+import QRCode from '../components/QRCode';
 
 const Home: NextPage = () => {
   return (
@@ -38,7 +39,8 @@ const Home: NextPage = () => {
             <Service icon={<CakeIcon />} title="the cake is not a lie" highlight="scout's honor 🙋‍♂️" description="we throw mad cake parties" />
           </div>
           <FTest />
-          <EmailForm />
+          <QRCode url="" />
+          <Emailer />
           <Footer />
         </div>
       </div>
@@ -54,10 +56,7 @@ export async function getServerSideProps() {
   //Create fetch's options
 
  //Fetch data from the API
- const res = await fetch('http://localhost:3000/api/hello');
- const data = await res.json();
- console.log(data);
 
   // Pass data to the page via props
-  return { props: { data } }
+  return { props: {  } }
 }

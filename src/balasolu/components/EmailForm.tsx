@@ -21,13 +21,20 @@ export default class EmailForm extends Component<IProps, IState> {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
+    async handleClick() {
         console.log('handling button click');
         const data = {
             name: this.state.name,
             email: this.state.email,
             message: this.state.message
         };
+        const res = await fetch('http://localhost:3000/api/sendEmail', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name: data.name, email: data.email, subject: 'email from contact form', description: data.message }),
+          });
         console.log(data);
     };
 
