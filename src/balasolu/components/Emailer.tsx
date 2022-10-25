@@ -9,13 +9,19 @@ const Emailer = () => {
     const handleClick = async () => {
         console.log('handling button click`');
         setDisabled(true);
-        await fetch('https://localhost/api/sendEmail', {
+        const host = window.location.protocol + "//" + window.location.host;
+        const url = host + '/api/sendEmail';
+        console.log(url);
+        await fetch(url, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({ name: name, email: email, subject: 'email from contact form', description: message }),
         });
+        setName('');
+        setEmail('');
+        setMessage('');
         console.log('button click handled');
     }
 
@@ -46,3 +52,7 @@ const Emailer = () => {
 };
 
 export default Emailer;
+
+export async function getServerSideProps() {
+    
+}
