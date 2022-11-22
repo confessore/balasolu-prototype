@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Script from 'next/script'
 import styles from '../styles/Home.module.css'
 import About from '../components/About';
 import Contact from '../components/Contact';
@@ -19,6 +20,7 @@ import CloudIcon from '@heroicons/react/24/outline/CloudIcon';
 import { isPropertySignature } from 'typescript';
 import axios from 'axios';
 import QRCode from '../components/QRCode';
+import Candle from '../components/Candle';
 
 const Home: NextPage = () => {
   return (
@@ -38,8 +40,7 @@ const Home: NextPage = () => {
             <Service icon={<CloudIcon />} title="we're your partner in the clouds" highlight="swift and responsive service availability anywhere your people are" description="redundancy and international stability is ensured with multi-regional replication" />
             <Service icon={<CakeIcon />} title="the cake is not a lie" highlight="scout's honor 🙋‍♂️" description="we throw mad cake parties" />
           </div>
-          <FTest />
-          <QRCode url="" />
+          <Candle name="that's right. we're selling candles." imgsrc="" highlight="100% soy wax" description="8oz hand poured all natural soy wax candles" price={15} />
           <Emailer />
           <Footer />
         </div>
